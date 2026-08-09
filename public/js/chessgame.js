@@ -78,7 +78,7 @@ const handleMove = (source, target) => {
         to: `${String.fromCharCode(97+target.col)}${8 -  target.row}`,
         promotion: "q",
     };
-
+    console.log("Sending move", move);
     socket.emit("move", move);
 };
 
