@@ -3,6 +3,7 @@ const socket = require("socket.io");
 const http = require("http");
 const {Chess} = require("chess.js");
 const path = require("path");
+require("dotenv").config()
 
 const app = express();
 
@@ -63,6 +64,7 @@ io.on("connection", function (uniquesocket) {
     })
 });
 
-server.listen(3000, function () {
+const port = process.env.PORT
+server.listen(port, function () {
     console.log("listening on port 3000")
 });
